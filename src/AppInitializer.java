@@ -68,7 +68,19 @@ public class AppInitializer {
         Session session = FactoryConfiguration.getInstance().getSession();
         Transaction transaction = session.beginTransaction();
 
+        session.save(c1);
+        session.save(c2);
 
+        session.save(i1);
+        session.save(i2);
+        session.save(i3);
+
+        session.save(o1);
+        session.save(o2);
+
+        session.save(od1);
+        session.save(od2);
+        session.save(od3);
 
         transaction.commit();
         session.close();
