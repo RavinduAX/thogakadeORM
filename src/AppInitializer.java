@@ -19,6 +19,10 @@ public class AppInitializer {
         c2.setCustId("C002");
         c2.setCustName("Nimal");
 
+        Customer c3 = new Customer();
+        c3.setCustId("C003");
+        c3.setCustName("Bandara");
+
         Item i1 = new Item();
         i1.setCode("I001");
 
@@ -81,6 +85,15 @@ public class AppInitializer {
         session.save(od1);
         session.save(od2);
         session.save(od3);
+
+        session.save(c3);
+        session.update(c3);
+
+        Customer c = session.get(Customer.class, "C001");
+        System.out.println(c.getCustId()+c.getCustName());
+
+        Customer c4 = session.get(Customer.class, "C003");
+        session.delete(c4);
 
         transaction.commit();
         session.close();
